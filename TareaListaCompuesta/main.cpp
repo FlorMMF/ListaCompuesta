@@ -4,6 +4,9 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    try{
+    } catch (const char * mensaje){
+        cerr<< mensaje << endl
+    }
     return 0;
 }

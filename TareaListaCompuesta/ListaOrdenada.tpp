@@ -1,5 +1,21 @@
 template <typename T>
-void ListaOrdenada<T>::Agregar(T valor){}
+void ListaOrdenada<T>::Agregar(T valor){
+    if(EstaVacia()){
+        lista.AgregarAlInicio(valor);
+        return;
+    }
+
+    int NumElem=lista.ConocerNumElem();
+
+    for(int i=0; i<NumElem; ++i){
+        if(lista[i]>valor){
+            lista.AgregrarEnPosicion(valor,i);
+            return;
+        }
+    }
+
+    lista.AgregarAlFinal(valor);
+}
 
 template <typename T>
 void ListaOrdenada<T>::Eliminar(T valor){
