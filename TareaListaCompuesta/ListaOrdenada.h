@@ -6,7 +6,7 @@ template <typename T>
 class ListaOrdenada{
 public:
     void Agregar(T valor);
-    void Eliminar();
+    void Eliminar(T valor);
     bool Buscar(T valor) const;
     bool EstaVacia() const;
     void Vaciar();
@@ -14,10 +14,11 @@ public:
     void ImprimirReversa();
     int ObtenerNumElem() const;
     void MezclarListas(const ListaOrdenada<T> &v);
+
 private:
     ListaDoble<T> lista;
-
-
+    T ObtenerPrimerValor();
+    void EliminarPrimero();
 } ;
 
 #include "ListaOrdenada.tpp"
