@@ -2,6 +2,17 @@
 #define LISTAORDENADA_H_INCLUDED
 
 #include "ListaSimple.hpp"
+
+/**
+
+ * \file ListaOrdenada.h
+
+ * \author Flor Machado y Elias Peregrina
+
+ * \date 13/02/2025
+
+ */
+
 template <typename T>
 class ListaOrdenada{
 public:
@@ -10,14 +21,46 @@ public:
     bool Buscar(T valor) const;
     bool EstaVacia() const;
     void Vaciar();
+    /** \brief M&eacute;todo para imprimir una lista
+     *
+     * \return void
+     *
+     */
     void Imprimir() const;
+    /** \brief M&eacute;todo para imprimir en reversa una lista
+     *
+     * \return void
+     *
+     */
     void ImprimirReversa();
-    int ObtenerNumElem() const;
-    void MezclarListas(const ListaOrdenada<T> &v);
+    /** \brief M&eacute;todo para obtener el primer valor de la lista doble
+     *
+     * \return int
+     *
+     */
+    int ObtenerNumElem() ;
+    /** \brief M&eacute;todo que mezcla los valores de dos listas
+     *
+     * \param v ListaOrdenada<T>&, la lista cuyos valores se van a mezclar con otra
+     * \return void
+     *
+     */
+    void MezclarListas(ListaOrdenada<T> &v);
+
 
 private:
     ListaDoble<T> lista;
-    T ObtenerPrimerValor();
+    /** \brief M&eacute;todo para obtener el primer valor de la lista
+     *
+     * \return T
+     *
+     */
+    T ObtenerPrimerValor() const ;
+    /** \brief M&eacute;todo para eliminar el primer valor de la lista
+     *
+     * \return void
+     *
+     */
     void EliminarPrimero();
 } ;
 

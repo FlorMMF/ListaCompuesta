@@ -1,3 +1,13 @@
+/**
+
+ * \file ListaOrdenada.tpp
+
+ * \author Flor Machado y Elias Peregrina
+
+ * \date 13/02/2025
+
+ */
+
 template <typename T>
 void ListaOrdenada<T>::Agregar(T valor){
     if(EstaVacia()){
@@ -48,21 +58,21 @@ void ListaOrdenada<T>::ImprimirReversa(){
 }
 
 template <typename T>
-int ListaOrdenada<T>::ObtenerNumElem() const{
+int ListaOrdenada<T>::ObtenerNumElem() {
     return lista.ConocerNumElem();
 }
 
 template <typename T>
-void ListaOrdenada<T>::MezclarListas(const ListaOrdenada<T> &v){
+void ListaOrdenada<T>::MezclarListas( ListaOrdenada<T> &v){
     for(int i = 0, t = v.ObtenerNumElem(); i < t; ++i){
-        lista.Agregar(v.ObtenerPrimerValor());
+        Agregar(v.ObtenerPrimerValor());
         v.EliminarPrimero();
     }
 }
 
 
 template <typename T>
-T ListaOrdenada<T>::ObtenerPrimerValor(){
+T ListaOrdenada<T>::ObtenerPrimerValor() const{
     return lista.ObtenerPrimero();
 }
 

@@ -1,4 +1,12 @@
+/**
 
+ * \file ListaSimple.tpp
+
+ * \author Flor Machado y Elias Peregrina
+
+ * \date 13/02/2025
+
+ */
 //Constructor
 template <typename T>
 ListaDoble<T>::ListaDoble(): numElem(0), primero(nullptr), ultimo(nullptr){}
@@ -51,6 +59,7 @@ void ListaDoble<T>::AgregarAlFinal(T valor){
     }
     ++numElem;
 }
+
 //Agregar en cierta posicion
 template <typename T>
 void ListaDoble<T>::AgregrarEnPosicion(T valor, int posicion){
@@ -212,6 +221,7 @@ void ListaDoble<T>::Imprimir() const{
         aux = aux -> siguiente;
         ++i;
     }
+    std::cout << std::endl;
 }
 
 //Imprimir Al revez
@@ -225,4 +235,27 @@ void ListaDoble<T>::ImprimirReversa() const{
         aux = aux -> anterior;
         --i;
     }
+    std::cout << std::endl;
+}
+
+//Operador sobrecargado para acceder a un elemento (lvalue)
+template <typename T>
+T& ListaDoble<T>::operator[](int index){
+    if (index < 0 || index >= numElem ) throw "Indice fuera de rango.";
+    Elemento *aux = primero;
+    for (int i = 0 ; i < index ; ++i){
+        aux = aux->siguiente;
+    }
+    return aux->valor;
+}
+
+//Operador sobrecargado para acceder a un elemento (rvalue)
+template <typename T>
+const T& ListaDoble<T>::operator[](int index) const{
+    if (index < 0 || index >= numElem ) throw "Indice fuera de rango.";
+    Elemento *aux = primero;
+    for (int i = 0 ; i < index ; ++i){
+        aux = aux->siguiente;
+    }
+    return aux->valor;
 }
