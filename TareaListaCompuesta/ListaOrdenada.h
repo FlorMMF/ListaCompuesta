@@ -16,10 +16,41 @@
 template <typename T>
 class ListaOrdenada{
 public:
+    /** \brief M&eacute;todo para agregar un elemento de forma ordenada
+     *
+     *  \param valor T, valor que se agreg&acute; dependiendo de su valor n&uacute;merico en la lista
+     *
+     *  \return void
+     *
+     */
     void Agregar(T valor);
+    /** \brief M&eacute;todo para eliminar un elemento de la lista
+     *
+     *  \param valor T, valor que se elimin&acute; de la lista
+     *
+     *  \return void
+     *
+     */
     void Eliminar(T valor);
+    /** \brief M&eacute;todo para buscar un elemento en la lista
+     *
+     *  \param valor T, valor que se quiere encontrar en la lista
+     *
+     *  \return bool, retorna si existe el valor en la lista
+     *
+     */ 
     bool Buscar(T valor) const;
+    /** \brief M&eacute;todo para identificar si la lista est&acute; vacia
+     *
+     *  \return bool, retorno si la lista  est&acute; vacia
+     *
+     */ 
     bool EstaVacia() const;
+    /** \brief M&eacute;todo que vac&iacute;a la lista
+     * 
+     *  \return void
+     *
+     */ 
     void Vaciar();
     /** \brief M&eacute;todo para imprimir una lista
      *
